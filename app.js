@@ -17,7 +17,7 @@ mongoose.connect(process.env.DB_URL)
     app.use('/meals', mealRoutes)
     app.use('/user', userRoutes)
     
-    app.listen(port, e => console.log("server started🔥🔥🚀🔥🔥"))
+    app.listen(port, e => console.log(`server started 🚀🔥🔥 on ${port}`))
 }).catch(err => console.log('err:', err))
 
 //import routes
