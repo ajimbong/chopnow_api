@@ -56,7 +56,7 @@ router.get('/', async (req, res)=>{
 
     //auth 
     const token = jwt.sign({id: user.id}, process.env.TOKEN_SECRET)
-    res.header('auth-token', token).send(token)
+    res.header('auth-token', token).json({id : user.id, token})
 })
 
 router.get('/test', verify, (req, res)=>{

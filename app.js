@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 
 mongoose.connect(process.env.DB_URL)
 .then(()=> {
-    app.get('/', (req,res) => {
+    app.get('/add/meal', (req,res) => {
         res.render('index');
     })
     
