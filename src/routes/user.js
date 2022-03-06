@@ -8,10 +8,10 @@ const jwt = require('jsonwebtoken')
 const verify = require('../middlewares/verifyToken')
 
 
-router.post('/', async (req, res)=>{
+router.post('/signup', async (req, res)=>{
     const {error, value} = registerValidation(req.body)
     if(error){
-        res.json({error : error.details[0].message})
+        res.status(400).json({error : error.details[0].message})
         return
     }
 
@@ -34,14 +34,14 @@ router.post('/', async (req, res)=>{
         res.json({id: user.id})
     }catch(err){
         console.log(err)
-        res.json({error: 'Sorry ther was an error'})
+        res.json({error: 'Sorry there was an error'})
     }
     
 })
-router.get('/', async (req, res)=>{
+router.post('/login', async (req, res)=>{
     const {error, value} = loginValidation(req.body)
     if(error){
-        res.json({error : error.details[0].message})
+        res.status(400).json({error : error.details[0].message})
         return
     }
 
