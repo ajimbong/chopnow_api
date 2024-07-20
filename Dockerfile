@@ -1,9 +1,9 @@
-FROM node:18-alpline
+FROM node:18.20.4-alpine3.20
 
 RUN mkdir /app
 WORKDIR /app
 
-COPY ./package.json package-lock.json 
+COPY package.json .
 RUN npm install
 
 COPY . .
